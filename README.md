@@ -33,3 +33,4 @@ and outliers, as well as converting categorical data to numerical.
 * Process numerical data by removing outliers and normalizing.
 * Convert categorical features to numerical.
 * Create a train/test split, reserving the testing set as the most recent month in the data.
+* Deliverable: 02_preprocessing.ipynb
