@@ -65,3 +65,4 @@ Week six was about adding engineered features to the dataset and then rerunning 
 * Join the MLS dataset with the California School District Areas 2024-25.
 * Make sure the newly joined dataset is properly formatted, fill missing values, and encode categorical features.
 * Rerun the linear regression and tree models on the new dataset and record the metrics.
+* Deliverable: Feature_Engineering.ipynb for new dataset, updated 03_baseline_model.ipynb and 04_model_comparison.ipynb for new models
