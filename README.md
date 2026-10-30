@@ -66,3 +66,12 @@ Week six was about adding engineered features to the dataset and then rerunning 
 * Make sure the newly joined dataset is properly formatted, fill missing values, and encode categorical features.
 * Rerun the linear regression and tree models on the new dataset and record the metrics.
 * Deliverable: Feature_Engineering.ipynb for new dataset, updated 03_baseline_model.ipynb and 04_model_comparison.ipynb for new models
+
+## Week Seven: Advanced Models
+In this week, XGBoost model were used to see if model performance could be pushed further. A key part of using XGBoost is hyperparamter tuning, which was performed using GridSearch. New metrics were recorded after finding the optimal parameters, resulting in a new best-performing model with an r² score of 0.920522.
+
+### Tasks:
+* Try gradient boosting using XGBoost.
+* Perform hyperparameter tuning on max_depth, n_estimators, and learning_rate.
+* Record new metrics and compare them to the old models.
+* Deliverable: 05_advanced_models.ipynb
