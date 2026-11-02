@@ -68,7 +68,7 @@ Week six was about adding engineered features to the dataset and then rerunning 
 * Deliverable: Feature_Engineering.ipynb for new dataset, updated 03_baseline_model.ipynb and 04_model_comparison.ipynb for new models
 
 ## Week Seven: Advanced Models
-In this week, XGBoost model were used to see if model performance could be pushed further. A key part of using XGBoost is hyperparamter tuning, which was performed using GridSearch. New metrics were recorded after finding the optimal parameters, resulting in a new best-performing model with an r² score of 0.920522.
+In this week, XGBoost model were used to see if model performance could be pushed further. A key part of using XGBoost is hyperparamter tuning, which was performed using GridSearch. New metrics were recorded after finding the optimal parameters, resulting in a new best-performing model with an r² score of 0.921226.
 
 ### Tasks:
 * Try gradient boosting using XGBoost.
