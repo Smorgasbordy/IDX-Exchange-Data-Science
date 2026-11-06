@@ -75,3 +75,14 @@ In this week, XGBoost model were used to see if model performance could be pushe
 * Perform hyperparameter tuning on max_depth, n_estimators, and learning_rate.
 * Record new metrics and compare them to the old models.
 * Deliverable: 05_advanced_models.ipynb
+
+## Week Eight: Evaluation Expansion
+This week focused on evaluating each model beyond the usual metrics of r² score, MAPE, MdAPE, and MAE. By looking at feature importance, it was determined that PostalCode had the most predictive power for every model. Additionally, we also plotted prediction vs. truth difference, and analyzed model performance for different price ranges and locations. This revealed that the most model error occurred when the model under-predicted the ClosePrice of luxury homes (ClosePrice >$1,350,000).
+
+### Tasks:
+* Compare performance of all four models (Linear Regression, Decision Tree, Random Forest, XGBoost) on the same dataset. Turn this information into the metrics_summary csv.
+* Investigate regression coefficients for Linear Regression model. Investigate feature importance for tree-based models (Decision Tree, Random Forest, XGBoost).
+* Graph the predicted vs. actual ClosePrice difference for every model.
+* Analyze how model performance changes when predicting ClosePrice in different price ranges.
+* Analyze how model performance changes when predicting ClosePrice in different counties.
+* Deliverable: 06_evaluation.ipynb and metrics_summary.csv
