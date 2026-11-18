@@ -6,6 +6,8 @@ import numpy as np
 from pathlib import Path
 import pandas as pd
 
+# Import the model and city encoder
+# The city encoder ensures that any city entered as input has the same encoding as in the model
 model_path = Path(__file__).parent / "model.joblib"
 encoder_path = Path(__file__).parent / 'city_encoder.joblib'
 encoder = joblib.load(encoder_path)
