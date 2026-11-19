@@ -68,7 +68,7 @@ Price bands were chosen based on data percentiles: [0, 0.25), [0.25, 0.5). [0.5,
 ## Streamlit App
 A simplified version of the final XGBoost model was used to create an interactive app in streamlit. Users input a living area, lotsize, bed/bath count, and city, and receive a predicted close price. The model behind the app is only trained on `LivingArea`, `LotSizeSquareFeet`, `BedroomsTotal`, `BathroomsTotalInteger`, and `City` and performs with an  R² score of 0.82. However, this simplification is necessary for ease of use. Each of the chosen features are readily available for any online listing, while other features of the finalized model (like `YearBuilt` or `AssociationFee`) can be harder to find.
 
-To run the app yourself, use `app.py` in the streamlit folder. Make sure to download `model.joblib` and `city_encoder.joblib` so that your device has access to the model.
+To run the app yourself, use `app.py` in the streamlit folder. Make sure to download `model.joblib` and `city_encoder.joblib` so that your device has access to the trained model.
 
 ## Repository Guide
 ```
