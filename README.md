@@ -5,10 +5,13 @@ linear regression, decision tree, random forest, and gradient boosted models to 
 
 ## Dataset
 The data I used for this project was pulled from IDX Exchange's California Regional Multiple Listing Service (CRMLS) database. It contains  information on California properties sold from January 2024 to April 2026, spanning 28 months total.
-* **Size**: (309735, 83)
+* **Dataset Size**: (309735, 83)
 * **Target Variable**: `ClosePrice`
 
-## Data Preperation
+## Data Preparation
+### Train/Validation/Test Split
+### Preprocessing
+### Feature Engineering
 
 ## Modeling
 
