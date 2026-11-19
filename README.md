@@ -37,7 +37,19 @@ Some custom features were created to help improve model performance:
 * School District Information: the original dataset had a lot of missing `HighSchoolDistrict` values. To remedy this, the dataset was joined (using longitude + latitude) with the California School District Areas 2024-25 dataset (https://data.ca.gov/@california-department-of-education/california-school-district-areas-2024-25). This provided far more accurate school district information, as well as the type of district (high, elementary, unified), public/private enrollment counts, and demographic data.
 
 ## Modeling
+Once that dataset was cleaned and engineered, it could be tested on various machine learning models. Many variations of each model were tested, and their hyperparamters likewise tuned. The best performing model of each type is displayed below. Furthermore, all reported metrics represent performance on the test set:
+
+| Model | R² score | MAPE | MdAPE | MAE |
+| ---- | -------- | ----- | ------ | ---- |
+| Linear Regression | 0.855653 | 12.550245 | 9.552526 | $148,375 |
+| Decision Tree | 0.867673 | 11.783563 | 8.438892 | $140,170 |
+| Random Forest | 0.905958 | 9.683137 | 6.796715 | $116,191 |
+| XGBoost | 0.919499 | 8.893307 | 6.240518 | $106,460 |
+| **XGBoost (no log transform)^** | 0.921226| 9.076099 | 6.285586 | $106,422 |
+
+^All models were designed to predict `ClosePriceLog`, the log transform of `ClosePrice`. The predicted values were then transformed back to their normal state for evaluation. For Linear Regression, Decision Trees, and Random Forests, this was found to improve performance. However, for the XGBoost model, predicting `ClosePrice` rather than `ClosePriceLog` resulted in better performance for all metrics besides MAPE.
 
 ## Evaluation
+
 
 ## Streamlit App
