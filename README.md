@@ -11,6 +11,12 @@ The data I used for this project was pulled from IDX Exchange's California Regio
 
 ## Data Preparation
 ### Train/Validation/Test Split
+Unlike many data science projects, the training, validation, and test sets were not chosen on a random split of the data. Instead they were divided as so:
+* **Train Set**: January 2024 - February 2026, 26 months
+* **Validation Set**: March 2026, 1 month
+* **Test Set**: April 2026, 1 month
+Additionally, while the validation and test sets always stayed the same, sometimes the train set was truncated to test model efficacy on different training windows.
+
 ### Preprocessing
 ### Feature Engineering
 
