@@ -15,9 +15,21 @@ Unlike many data science projects, the training, validation, and test sets were 
 * **Train Set**: January 2024 - February 2026, 26 months
 * **Validation Set**: March 2026, 1 month
 * **Test Set**: April 2026, 1 month
-Additionally, while the validation and test sets always stayed the same, sometimes the train set was truncated to test model efficacy on different training windows.
+
+Additionally, while the validation and test sets always stayed the same, sometimes the train set was truncated to test model efficacy on different training windows. That being said, all reported metrics in this file use the full training window above.
 
 ### Preprocessing
+* **Removing Data Leakage**: The original dataset included information that would only be known after the property was listed or sold, such as `ListPrice`, `DaysOnMarket` or `ListAgentName`. Since we want the model to work on any property, regardless of listing status, any information that would come from a listing, and wasn't an inherent feature of the property, needed to be deleted.
+* **Dropping Unnecessary Data**: Some columns were dropped for redundancy, irrelevance, or high missingness. For example, several redundant columns encoded lot size, but used different units. `LotSizeSquareFeet` was kept, while `LotSizeDimensions`, `LotSizeArea`, and 'LotSizeAcres` were dropped. Metadata fields like `OriginatingSystemName` were also removed. Additionally, columns with >50% missing rows were dropped (after being checked for relevancy).
+* **Handling Outliers**: Numeric features were winsorized (most using the 0.95 percentile as the fill value), except for `ClosePrice` which, following the internship directions, had its <0.5 percentile and >0.95 percentile values dropped entirely. To avoid data leakage, outlier cutoffs were learned only on the training data and then applied to the test set.
+* **Filling Missing Data**: Missing boolean and categorical values were filled with "Unknown". Missing numerical features were imputed through various methods (check 02_preprocessing.ipynb for more detail). Missing `Latitude`, `Longitude` and 'City` values were filled by matching their `PostalCode` values to the uszipcode database (https://pypi.org/project/uszipcode/).
+* **Encoding Categorical Values**: Low cardinality features like `Flooring` and boolean columns were one hot encoded. High cardinality features like `PostalCode` and `HighSchoolDistrict` were target encoded, making sure to avoid data leakage by using only the encodings learned from the training data and applying those to the test set.
+
+After this process, the three cleaned and workable datasets were:
+* **Train Set**: (255033, 47)
+* **Validation Set**: (10293, 47)
+* **Test Set**: (11327, 47)
+
 ### Feature Engineering
 
 ## Modeling
