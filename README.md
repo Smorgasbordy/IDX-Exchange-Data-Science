@@ -31,6 +31,10 @@ After this process, the three cleaned and workable datasets were:
 * **Test Set**: (11327, 47)
 
 ### Feature Engineering
+Some custom features were created to help improve model performance:
+* `BedBathRatio`: computed from `BedroomsTotal / BathroomsTotalInteger`
+* `PropertyAge`: computed from the date the property was entered into the MLS system  - `YearBuilt`
+* School District Information: the original dataset had a lot of missing `HighSchoolDistrict` values. To remedy this, the dataset was joined (using longitude + latitude) with the California School District Areas 2024-25 dataset (https://data.ca.gov/@california-department-of-education/california-school-district-areas-2024-25). This provided far more accurate school district information, as well as the type of district (high, elementary, unified), public/private enrollment counts, and demographic data.
 
 ## Modeling
 
