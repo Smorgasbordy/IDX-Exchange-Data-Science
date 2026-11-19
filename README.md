@@ -79,6 +79,7 @@ To run the app yourself, use `app.py` in the streamlit folder. Make sure to down
 Feature_Engineering.ipynb         Week 6 - Added Features
 05_advanced_models.ipynb          Week 7 - XGBoost
 06_evaluation.ipynb               Week 8 - Feature Importance, Pred/Truth Plot, Price Bands, Location
+metrics_summary                          - Performance Summary of Each Model
 
 Streamlit Folder                  Week 9 - Streamlit Prediction App
 - app.py                                 - Streamlit Script
