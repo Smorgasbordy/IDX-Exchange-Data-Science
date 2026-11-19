@@ -50,6 +50,19 @@ Once that dataset was cleaned and engineered, it could be tested on various mach
 ^All models were designed to predict `ClosePriceLog`, the log transform of `ClosePrice`. The predicted values were then transformed back to their normal state for evaluation. For Linear Regression, Decision Trees, and Random Forests, this was found to improve performance. However, for the XGBoost model, predicting `ClosePrice` rather than `ClosePriceLog` resulted in better performance for all metrics besides MAPE.
 
 ## Evaluation
+The metrics listed above were used throughout the project to evaluate each model. However, to get a better understanding of the model, more in-depth evaluation methods were tested. 
+* Across all models, `PostalCode` was shown to be the most important feature, reinforcing the famous notion of "Location, Location, Location" in real estate.
+* By plotting predicted vs. true values, it was discovered that most model error occurs when models under-predict very expensive `ClosePrice`.
+* Using price band analysis, it was found that the models perform the best for cheaper homes, with model performance decreasing as `ClosePrice` increases.
+* Likewise, models tend to perform worse for counties with high median `ClosePrice`, such as Santa Cruz and San Fransisco.
 
+#### Price Band Analysis of XGBoost Model
+Price bands were chosen based on data percentiles: [0, 0.25), [0.25, 0.5). [0.5, 0.75), [0.75, 1]
+| Price Band | Test MAPE | Test MdAPE |
+| ---------- | ----- | ----- |
+| <$650K | 7.992131 | 4.695446 |
+| $650K-$890K | 7.514709 | 5.011109 |
+| $890K-$1.35M | 9.372293 | 6.945837 |
+| $1.35M+ | 10.354906 | 8.306254 |
 
 ## Streamlit App
