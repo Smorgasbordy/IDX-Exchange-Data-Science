@@ -97,3 +97,11 @@ listing for a property and easily input all five features to get a predicted pri
 * Perform target encoding on the City feature, making sure to load city_encoder with joblib onto the streamlit script.
 * Load a trained model with joblib onto the streamlit script.
 * **Deliverables**: streamlit folder -> app.py (interactive app), create_streamlit_model.ipynb (notebook for model/encoder creation), model.joblib & city_encoder.joblib (variables to load)
+
+## Week Ten: Documentation:
+While this file had been updated weekly throughout the project, a more concise document was needed to summarize the my findings. The README.md was created, with information about the dataset, data preparation, modeling, evaluation, and the streamlit app.
+
+### Tasks:
+* Write a README describing: dataset source, preprocessing, models tested, and best results.
+* Document instructions to re-run the code and launch the app.
+* **Deliverables**: README.md
