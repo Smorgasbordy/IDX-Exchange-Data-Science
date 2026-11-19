@@ -22,7 +22,7 @@ Additionally, while the validation and test sets always stayed the same, sometim
 * **Removing Data Leakage**: The original dataset included information that would only be known after the property was listed or sold, such as `ListPrice`, `DaysOnMarket` or `ListAgentName`. Since we want the model to work on any property, regardless of listing status, any information that would come from a listing, and wasn't an inherent feature of the property, needed to be deleted.
 * **Dropping Unnecessary Data**: Some columns were dropped for redundancy, irrelevance, or high missingness. For example, several redundant columns encoded lot size, but used different units. `LotSizeSquareFeet` was kept, while `LotSizeDimensions`, `LotSizeArea`, and 'LotSizeAcres` were dropped. Metadata fields like `OriginatingSystemName` were also removed. Additionally, columns with >50% missing rows were dropped (after being checked for relevancy).
 * **Handling Outliers**: Numeric features were winsorized (most using the 0.95 percentile as the fill value), except for `ClosePrice` which, following the internship directions, had its <0.5 percentile and >0.95 percentile values dropped entirely. To avoid data leakage, outlier cutoffs were learned only on the training data and then applied to the test set.
-* **Filling Missing Data**: Missing boolean and categorical values were filled with "Unknown". Missing numerical features were imputed through various methods (check 02_preprocessing.ipynb for more detail). Missing `Latitude`, `Longitude` and 'City` values were filled by matching their `PostalCode` values to the uszipcode database (https://pypi.org/project/uszipcode/).
+* **Filling Missing Data**: Missing boolean and categorical values were filled with "Unknown". Missing numerical features were imputed through various methods (check `02_preprocessing.ipynb` for more detail). Missing `Latitude`, `Longitude` and 'City` values were filled by matching their `PostalCode` values to the uszipcode database (https://pypi.org/project/uszipcode/).
 * **Encoding Categorical Values**: Low cardinality features like `Flooring` and boolean columns were one hot encoded. High cardinality features like `PostalCode` and `HighSchoolDistrict` were target encoded, making sure to avoid data leakage by using only the encodings learned from the training data and applying those to the test set.
 
 After this process, the three cleaned and workable datasets were:
@@ -66,3 +66,27 @@ Price bands were chosen based on data percentiles: [0, 0.25), [0.25, 0.5). [0.5,
 | $1.35M+ | 10.354906 | 8.306254 |
 
 ## Streamlit App
+A simplified version of the final XGBoost model was used to create an interactive app in streamlit. Users input a living area, lotsize, bed/bath count, and city, and receive a predicted close price. The model behind the app is only trained on `LivingArea`, `LotSizeSquareFeet`, `BedroomsTotal`, `BathroomsTotalInteger`, and `City` and performs with an  R² score of 0.82. However, this simplification is necessary for ease of use. Each of the chosen features are readily available for any online listing, while other features of the finalized model (like `YearBuilt` or `AssociationFee`) can be harder to find.
+
+To run the app yourself, use `app.py` in the streamlit folder. Make sure to download `model.joblib` and `city_encoder.joblib` so that your device has access to the model.
+
+## Repository Guide
+```
+01_exploration.ipynb              Week 2 - EDA
+02_preprocessing.ipynb            Week 3 - Cleaning, Encoding
+03_baseline_model.ipynb           Week 4 - Linear Regression
+04_model_comparison.ipynb         Week 5 - Decision Tree, Random Forest
+Feature_Engineering.ipynb         Week 6 - Added Features
+05_advanced_models.ipynb          Week 7 - XGBoost
+06_evaluation.ipynb               Week 8 - Feature Importance, Pred/Truth Plot, Price Bands, Location
+
+streamlit folder                  Week 9 - Streamlit Prediction App
+- app.py                                 - Streamlit Script
+- create_streamlit_model.ipynb           - Simplified Model Training & Evaluation
+- model.joblib                           - Model Download
+- city_encoder.joblib                    - Encoder Download
+
+Text Files                        Week 10 - Documentation
+- README.md                               - Key Findings
+- week_by_week_summary.md                 - Weekly Summary of Findings
+```
