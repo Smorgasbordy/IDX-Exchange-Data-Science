@@ -80,7 +80,7 @@ Feature_Engineering.ipynb         Week 6 - Added Features
 05_advanced_models.ipynb          Week 7 - XGBoost
 06_evaluation.ipynb               Week 8 - Feature Importance, Pred/Truth Plot, Price Bands, Location
 
-streamlit folder                  Week 9 - Streamlit Prediction App
+Streamlit Folder                  Week 9 - Streamlit Prediction App
 - app.py                                 - Streamlit Script
 - create_streamlit_model.ipynb           - Simplified Model Training & Evaluation
 - model.joblib                           - Model Download
