@@ -1,7 +1,5 @@
-# IDX Exchange - Data Science Internship
-This repository contains the code that I wrote during my Fall 2026 IDX Exchange Data Science Internship. 
-This internship focuses on cleaning, analyzing, and feature engineering MLS real estate data, and then using this data
-to create linear regression, decision tree, and random forest models to predict California housing prices.
+# Week-By-Week Summary
+This file contains a more detailed summary of what actions I took during each week of this project.
 
 ## Week One: Orientation & Setup
 Week One simply required downloading the datasets and understanding the type of data being used.
