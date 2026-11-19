@@ -44,10 +44,10 @@ Once that dataset was cleaned and engineered, it could be tested on various mach
 | Linear Regression | 0.855653 | 12.550245 | 9.552526 | $148,375 |
 | Decision Tree | 0.867673 | 11.783563 | 8.438892 | $140,170 |
 | Random Forest | 0.905958 | 9.683137 | 6.796715 | $116,191 |
-| XGBoost | 0.919499 | **8.893307** | 6.240518 | $106,460 |
-| **XGBoost (no log transform)^** | **0.921226**| 9.076099 | **6.285586** | **$106,422** |
+| XGBoost | 0.919499 | **8.893307** | **6.240518** | $106,460 |
+| XGBoost (no log transform)^ | **0.921226**| 9.076099 | 6.285586 | **$106,422** |
 
-^All models were designed to predict `ClosePriceLog`, the log transform of `ClosePrice`. The predicted values were then transformed back to their normal state for evaluation. For Linear Regression, Decision Trees, and Random Forests, this was found to improve performance. However, for the XGBoost model, predicting `ClosePrice` rather than `ClosePriceLog` resulted in better performance for all metrics besides MAPE.
+^All models were designed to predict `ClosePriceLog`, the log transform of `ClosePrice`. The predicted values were then transformed back to their normal state for evaluation. For Linear Regression, Decision Trees, and Random Forests, this was found to improve performance. However, for the XGBoost model, predicting `ClosePrice` rather than `ClosePriceLog` resulted in better performance for some metrics.
 
 ## Evaluation
 The metrics listed above were used throughout the project to evaluate each model. However, to get a better understanding of the model, more in-depth evaluation methods were tested. 
