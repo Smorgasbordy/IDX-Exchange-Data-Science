@@ -54,7 +54,7 @@ The metrics listed above were used throughout the project to evaluate each model
 * Across all models, `PostalCode` was shown to be the most important feature, reinforcing the famous notion of "Location, Location, Location" in real estate.
 * By plotting predicted vs. true values, it was discovered that most model error occurs when models under-predict very expensive `ClosePrice`.
 * Using price band analysis, it was found that the models perform the best for cheaper homes, with model performance decreasing as `ClosePrice` increases.
-* Likewise, models tend to perform worse for counties with high median `ClosePrice`, such as Santa Cruz and San Fransisco.
+* Likewise, models tend to perform worse for counties with high median `ClosePrice`, such as Santa Cruz and Alameda.
 
 #### Price Band Analysis of XGBoost Model
 Price bands were chosen based on data percentiles: [0, 0.25), [0.25, 0.5). [0.5, 0.75), [0.75, 1]
